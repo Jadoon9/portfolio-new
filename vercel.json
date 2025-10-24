@@ -1,0 +1,56 @@
+# Vercel Configuration
+# This file configures Vercel deployment settings
+
+[build]
+command = "npm run build"
+output = ".next"
+
+[build.environment]
+NODE_VERSION = "18"
+
+# Redirect all requests to the main page (for SPA behavior)
+[[redirects]]
+from = "/*"
+to = "/"
+status = 200
+
+# Headers for better performance and security
+[[headers]]
+for = "/*"
+[headers.values]
+X-Frame-Options = "DENY"
+X-Content-Type-Options = "nosniff"
+X-XSS-Protection = "1; mode=block"
+Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Cache static assets
+[[headers]]
+for = "/static/*"
+[headers.values]
+Cache-Control = "public, max-age=31536000, immutable"
+
+# Cache images
+[[headers]]
+for = "/*.png"
+[headers.values]
+Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+for = "/*.jpg"
+[headers.values]
+Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+for = "/*.jpeg"
+[headers.values]
+Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+for = "/*.svg"
+[headers.values]
+Cache-Control = "public, max-age=31536000"
+
+[[headers]]
+for = "/*.ico"
+[headers.values]
+Cache-Control = "public, max-age=31536000"
