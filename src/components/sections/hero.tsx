@@ -16,7 +16,7 @@ import {
   Rocket,
   Sparkles,
 } from "lucide-react";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { AnimatedCounter } from "../ui/animated-counter";
 
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });

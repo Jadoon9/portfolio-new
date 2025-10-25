@@ -5,7 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { projects } from "@/data";
 import { Project } from "@/types";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { AnimatedCounter } from "../ui/animated-counter";
 import {
   ExternalLink,
   Github,

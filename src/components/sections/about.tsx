@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { AnimatedCounter } from "../ui/animated-counter";
 import {
   Code,
   Coffee,
@@ -232,8 +232,8 @@ export function AboutSection() {
                   </h3>
                   <div className="space-y-4 text-gray-600 dark:text-gray-300 text-lg leading-relaxed">
                     <p>
-                      I'm a passionate Front-End Developer with over 5 years of
-                      experience creating beautiful, performant web
+                      I&apos;m a passionate Front-End Developer with over 5
+                      years of experience creating beautiful, performant web
                       applications. I specialize in React.js, Next.js,
                       TypeScript, and modern front-end ecosystems.
                     </p>
@@ -245,10 +245,11 @@ export function AboutSection() {
                       technologies and best practices.
                     </p>
                     <p>
-                      When I'm not coding, you can find me exploring new
+                      When I&apos;m not coding, you can find me exploring new
                       technologies, contributing to open-source projects, or
-                      sharing knowledge with the developer community. I'm always
-                      excited to take on new challenges and learn something new.
+                      sharing knowledge with the developer community. I&apos;m
+                      always excited to take on new challenges and learn
+                      something new.
                     </p>
                   </div>
                 </div>
@@ -474,7 +475,7 @@ export function AboutSection() {
             <div className="grid grid-cols-2 gap-8 w-full max-w-lg">
               {achievements.map((achievement, index) => (
                 <motion.div
-                  key={achievement.title}
+                  key={achievement.subtitle}
                   className="bg-white dark:bg-gray-800 p-8 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 text-center group cursor-pointer relative overflow-hidden"
                   whileHover={{ scale: 1.05, y: -8 }}
                   whileTap={{ scale: 0.95 }}

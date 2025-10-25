@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState, useMemo } from "react";
 import { experiences } from "@/data";
-import { AnimatedCounter } from "@/components/ui/animated-counter";
+import { AnimatedCounter } from "../ui/animated-counter";
 import {
   Briefcase,
   Calendar,
