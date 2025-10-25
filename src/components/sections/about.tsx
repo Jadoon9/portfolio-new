@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 import {
   Code,
   Coffee,
@@ -57,28 +58,32 @@ export function AboutSection() {
   const achievements = [
     {
       icon: Award,
-      title: "5+ Years",
+      value: 5,
+      suffix: "+ Years",
       subtitle: "Experience",
       color: "text-yellow-500",
       bgColor: "from-yellow-400 to-orange-500",
     },
     {
       icon: Globe,
-      title: "50+",
+      value: 50,
+      suffix: "+",
       subtitle: "Projects",
       color: "text-blue-500",
       bgColor: "from-blue-400 to-cyan-500",
     },
     {
       icon: Users,
-      title: "20+",
+      value: 20,
+      suffix: "+",
       subtitle: "Clients",
       color: "text-green-500",
       bgColor: "from-green-400 to-emerald-500",
     },
     {
       icon: Zap,
-      title: "15+",
+      value: 15,
+      suffix: "+",
       subtitle: "Technologies",
       color: "text-purple-500",
       bgColor: "from-purple-400 to-pink-500",
@@ -414,35 +419,51 @@ export function AboutSection() {
                   </div>
                 </div>
 
-                {/* Enhanced floating elements around avatar */}
+                {/* Enhanced floating elements around avatar - Optimized */}
                 <motion.div
                   className="absolute -top-8 -right-8 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 dark:border-blue-800"
-                  animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-                  transition={{ duration: 4, repeat: Infinity }}
+                  animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
+                  transition={{
+                    duration: 8,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   <Rocket className="w-10 h-10 text-blue-600" />
                 </motion.div>
 
                 <motion.div
                   className="absolute top-1/2 -right-12 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-indigo-200 dark:border-indigo-800"
-                  animate={{ y: [0, 25, 0], rotate: [0, -10, 0] }}
-                  transition={{ duration: 5, repeat: Infinity }}
+                  animate={{ y: [0, 12, 0], rotate: [0, -5, 0] }}
+                  transition={{
+                    duration: 10,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   <Code className="w-10 h-10 text-indigo-600" />
                 </motion.div>
 
                 <motion.div
                   className="absolute -bottom-8 -left-8 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-purple-200 dark:border-purple-800"
-                  animate={{ y: [0, -15, 0], rotate: [0, 15, 0] }}
-                  transition={{ duration: 3.5, repeat: Infinity }}
+                  animate={{ y: [0, -8, 0], rotate: [0, 8, 0] }}
+                  transition={{
+                    duration: 7,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   <Zap className="w-10 h-10 text-purple-600" />
                 </motion.div>
 
                 <motion.div
                   className="absolute top-1/2 -left-12 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-green-200 dark:border-green-800"
-                  animate={{ y: [0, -25, 0], rotate: [0, -15, 0] }}
-                  transition={{ duration: 4.5, repeat: Infinity }}
+                  animate={{ y: [0, -12, 0], rotate: [0, -8, 0] }}
+                  transition={{
+                    duration: 9,
+                    repeat: Infinity,
+                    ease: "easeInOut",
+                  }}
                 >
                   <Globe className="w-10 h-10 text-green-600" />
                 </motion.div>
@@ -477,7 +498,12 @@ export function AboutSection() {
                       </div>
                     </div>
                     <div className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
-                      {achievement.title}
+                      <AnimatedCounter
+                        value={achievement.value}
+                        suffix={achievement.suffix}
+                        duration={2.5}
+                        delay={0.8 + index * 0.2}
+                      />
                     </div>
                     <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
                       {achievement.subtitle}

@@ -9,7 +9,6 @@ import {
   Mail,
   Code,
   Palette,
-  Zap,
   User,
   Briefcase,
   Award,
@@ -17,6 +16,7 @@ import {
   Rocket,
   Sparkles,
 } from "lucide-react";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
@@ -62,12 +62,12 @@ export function HeroSection() {
         <motion.div
           className="absolute top-20 left-20 w-96 h-96 bg-gradient-to-r from-blue-500/20 to-purple-500/20 rounded-full blur-3xl"
           animate={{
-            x: [0, 100, 0],
-            y: [0, -50, 0],
-            scale: [1, 1.2, 1],
+            x: [0, 50, 0],
+            y: [0, -25, 0],
+            scale: [1, 1.1, 1],
           }}
           transition={{
-            duration: 20,
+            duration: 25,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -76,26 +76,26 @@ export function HeroSection() {
         <motion.div
           className="absolute bottom-20 right-20 w-80 h-80 bg-gradient-to-r from-pink-500/20 to-yellow-500/20 rounded-full blur-3xl"
           animate={{
-            x: [0, -80, 0],
-            y: [0, 60, 0],
-            scale: [1, 0.8, 1],
+            x: [0, -40, 0],
+            y: [0, 30, 0],
+            scale: [1, 0.9, 1],
           }}
           transition={{
-            duration: 15,
+            duration: 30,
             repeat: Infinity,
             ease: "easeInOut",
           }}
         />
 
-        {/* Floating Tech Icons */}
+        {/* Floating Tech Icons - Reduced for performance */}
         <motion.div
-          className="absolute top-1/4 left-1/4 text-6xl opacity-20"
+          className="absolute top-1/4 left-1/4 text-6xl opacity-10"
           animate={{
-            y: [0, -30, 0],
-            rotate: [0, 10, 0],
+            y: [0, -15, 0],
+            rotate: [0, 5, 0],
           }}
           transition={{
-            duration: 6,
+            duration: 12,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -104,13 +104,13 @@ export function HeroSection() {
         </motion.div>
 
         <motion.div
-          className="absolute top-1/3 right-1/3 text-5xl opacity-20"
+          className="absolute bottom-1/3 right-1/3 text-5xl opacity-10"
           animate={{
-            y: [0, 25, 0],
-            rotate: [0, -15, 0],
+            y: [0, 15, 0],
+            rotate: [0, -8, 0],
           }}
           transition={{
-            duration: 8,
+            duration: 15,
             repeat: Infinity,
             ease: "easeInOut",
           }}
@@ -118,34 +118,20 @@ export function HeroSection() {
           <Palette className="text-purple-400" />
         </motion.div>
 
+        {/* Interactive Mouse Follower - Optimized */}
         <motion.div
-          className="absolute bottom-1/3 left-1/3 text-4xl opacity-20"
+          className="absolute w-3 h-3 bg-white/20 rounded-full pointer-events-none"
+          style={{
+            left: mousePosition.x - 6,
+            top: mousePosition.y - 6,
+          }}
           animate={{
-            y: [0, -20, 0],
-            rotate: [0, 20, 0],
+            scale: [1, 1.3, 1],
           }}
           transition={{
-            duration: 7,
+            duration: 3,
             repeat: Infinity,
             ease: "easeInOut",
-          }}
-        >
-          <Zap className="text-yellow-400" />
-        </motion.div>
-
-        {/* Interactive Mouse Follower */}
-        <motion.div
-          className="absolute w-4 h-4 bg-white/30 rounded-full pointer-events-none"
-          style={{
-            left: mousePosition.x - 8,
-            top: mousePosition.y - 8,
-          }}
-          animate={{
-            scale: [1, 1.5, 1],
-          }}
-          transition={{
-            duration: 2,
-            repeat: Infinity,
           }}
         />
       </div>
@@ -211,7 +197,7 @@ export function HeroSection() {
             technologies.
             <br />
             <span className="text-white/50">
-              Let's build something amazing together.
+              Let&apos;s build something amazing together.
             </span>
           </motion.p>
 
@@ -286,12 +272,13 @@ export function HeroSection() {
                 whileHover={{ scale: 1.1, y: -3 }}
                 whileTap={{ scale: 0.9 }}
                 animate={{
-                  y: [0, -5, 0],
+                  y: [0, -3, 0],
                 }}
                 transition={{
-                  duration: 2,
+                  duration: 3,
                   repeat: Infinity,
-                  delay: index * 0.2,
+                  delay: index * 0.3,
+                  ease: "easeInOut",
                 }}
               >
                 <social.icon className="w-6 h-6" />
@@ -307,10 +294,15 @@ export function HeroSection() {
             transition={{ duration: 0.8, delay: 1.4 }}
           >
             {[
-              { number: "5+", label: "Years Experience", icon: Award },
-              { number: "50+", label: "Projects Done", icon: Briefcase },
-              { number: "20+", label: "Happy Clients", icon: User },
-              { number: "15+", label: "Technologies", icon: Star },
+              { value: 5, suffix: "+", label: "Years Experience", icon: Award },
+              {
+                value: 50,
+                suffix: "+",
+                label: "Projects Done",
+                icon: Briefcase,
+              },
+              { value: 20, suffix: "+", label: "Happy Clients", icon: User },
+              { value: 15, suffix: "+", label: "Technologies", icon: Star },
             ].map((stat, index) => (
               <motion.div
                 key={index}
@@ -324,7 +316,12 @@ export function HeroSection() {
                   <stat.icon className="w-8 h-8 text-white/80" />
                 </div>
                 <div className="text-3xl font-bold text-white mb-1">
-                  {stat.number}
+                  <AnimatedCounter
+                    value={stat.value}
+                    suffix={stat.suffix}
+                    duration={2.5}
+                    delay={1.8 + index * 0.2}
+                  />
                 </div>
                 <div className="text-white/60 text-sm">{stat.label}</div>
               </motion.div>
@@ -342,8 +339,8 @@ export function HeroSection() {
           <motion.button
             onClick={() => scrollToSection("#about")}
             className="text-white/60 hover:text-white transition-colors duration-200 flex flex-col items-center space-y-2 group"
-            animate={{ y: [0, 10, 0] }}
-            transition={{ duration: 2, repeat: Infinity }}
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2.5, repeat: Infinity, ease: "easeInOut" }}
             whileHover={{ scale: 1.1 }}
           >
             <span className="text-sm font-medium group-hover:text-white">

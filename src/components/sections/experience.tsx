@@ -2,9 +2,9 @@
 
 import { motion } from "framer-motion";
 import { useInView } from "framer-motion";
-import { useRef, useState } from "react";
+import { useRef, useState, useMemo } from "react";
 import { experiences } from "@/data";
-import { Experience } from "@/types";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 import {
   Briefcase,
   Calendar,
@@ -28,19 +28,40 @@ export function ExperienceSection() {
   const [activeExperience, setActiveExperience] = useState<number>(0);
   const [hoveredCard, setHoveredCard] = useState<number | null>(null);
 
+  // Ensure activeExperience is within bounds
+  const safeActiveExperience = useMemo(() => {
+    const maxIndex = experiences.length - 1;
+    if (maxIndex < 0) return 0;
+    return Math.min(activeExperience, maxIndex);
+  }, [activeExperience, experiences.length]);
+
   const stats = [
     {
       icon: Briefcase,
       label: "Companies",
-      value: "5+",
+      value: 5,
+      suffix: "+",
       color: "text-blue-500",
     },
-    { icon: Award, label: "Projects", value: "50+", color: "text-green-500" },
-    { icon: Users, label: "Team Size", value: "10+", color: "text-purple-500" },
+    {
+      icon: Award,
+      label: "Projects",
+      value: 50,
+      suffix: "+",
+      color: "text-green-500",
+    },
+    {
+      icon: Users,
+      label: "Team Size",
+      value: 10,
+      suffix: "+",
+      color: "text-purple-500",
+    },
     {
       icon: TrendingUp,
       label: "Growth",
-      value: "200%",
+      value: 200,
+      suffix: "%",
       color: "text-orange-500",
     },
   ];
@@ -138,7 +159,12 @@ export function ExperienceSection() {
                 <stat.icon className={`w-8 h-8 ${stat.color}`} />
               </div>
               <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                {stat.value}
+                <AnimatedCounter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  duration={2.5}
+                  delay={0.5 + index * 0.2}
+                />
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
                 {stat.label}
@@ -248,10 +274,10 @@ export function ExperienceSection() {
                   </div>
                   <div>
                     <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
-                      {experiences[activeExperience].position}
+                      {experiences[safeActiveExperience].position}
                     </h3>
                     <p className="text-blue-600 dark:text-blue-400 font-semibold">
-                      {experiences[activeExperience].company}
+                      {experiences[safeActiveExperience].company}
                     </p>
                   </div>
                 </div>
@@ -259,11 +285,11 @@ export function ExperienceSection() {
                 <div className="flex items-center space-x-6 mb-8 text-sm text-gray-600 dark:text-gray-400">
                   <div className="flex items-center space-x-2">
                     <Calendar className="w-4 h-4" />
-                    <span>{experiences[activeExperience].duration}</span>
+                    <span>{experiences[safeActiveExperience].duration}</span>
                   </div>
                   <div className="flex items-center space-x-2">
                     <MapPin className="w-4 h-4" />
-                    <span>{experiences[activeExperience].location}</span>
+                    <span>{experiences[safeActiveExperience].location}</span>
                   </div>
                 </div>
 
@@ -273,7 +299,7 @@ export function ExperienceSection() {
                     Key Responsibilities
                   </h4>
                   <ul className="space-y-2">
-                    {experiences[activeExperience].responsibilities.map(
+                    {experiences[safeActiveExperience]?.responsibilities?.map(
                       (responsibility, index) => (
                         <motion.li
                           key={index}
@@ -286,6 +312,10 @@ export function ExperienceSection() {
                           <span>{responsibility}</span>
                         </motion.li>
                       )
+                    ) || (
+                      <li className="text-gray-500 dark:text-gray-400 italic">
+                        No responsibilities listed
+                      </li>
                     )}
                   </ul>
                 </div>
@@ -296,7 +326,7 @@ export function ExperienceSection() {
                     Achievements
                   </h4>
                   <ul className="space-y-2">
-                    {experiences[activeExperience].achievements.map(
+                    {experiences[safeActiveExperience]?.achievements?.map(
                       (achievement, index) => (
                         <motion.li
                           key={index}
@@ -309,6 +339,10 @@ export function ExperienceSection() {
                           <span>{achievement}</span>
                         </motion.li>
                       )
+                    ) || (
+                      <li className="text-gray-500 dark:text-gray-400 italic">
+                        No achievements listed
+                      </li>
                     )}
                   </ul>
                 </div>
@@ -319,7 +353,7 @@ export function ExperienceSection() {
                     Technologies Used
                   </h4>
                   <div className="flex flex-wrap gap-2">
-                    {experiences[activeExperience].technologies.map(
+                    {experiences[safeActiveExperience].technologies.map(
                       (tech, index) => (
                         <motion.span
                           key={index}
@@ -335,9 +369,9 @@ export function ExperienceSection() {
                   </div>
                 </div>
 
-                {experiences[activeExperience].website && (
+                {experiences[safeActiveExperience].website && (
                   <motion.a
-                    href={experiences[activeExperience].website}
+                    href={experiences[safeActiveExperience].website}
                     target="_blank"
                     rel="noopener noreferrer"
                     className="inline-flex items-center space-x-2 mt-8 px-6 py-3 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200"

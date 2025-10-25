@@ -5,6 +5,7 @@ import { useInView } from "framer-motion";
 import { useRef, useState } from "react";
 import { projects } from "@/data";
 import { Project } from "@/types";
+import { AnimatedCounter } from "@/components/ui/animated-counter";
 import {
   ExternalLink,
   Github,
@@ -19,7 +20,6 @@ import {
   Grid,
   List,
   Search,
-  Tag,
   X,
 } from "lucide-react";
 
@@ -49,18 +49,32 @@ export function ProjectsSection() {
   });
 
   const stats = [
-    { icon: Code, label: "Projects", value: "15+", color: "text-blue-500" },
-    { icon: Star, label: "Featured", value: "8+", color: "text-yellow-500" },
+    {
+      icon: Code,
+      label: "Projects",
+      value: 15,
+      suffix: "+",
+      color: "text-blue-500",
+    },
+    {
+      icon: Star,
+      label: "Featured",
+      value: 8,
+      suffix: "+",
+      color: "text-yellow-500",
+    },
     {
       icon: Users,
       label: "Collaborations",
-      value: "5+",
+      value: 5,
+      suffix: "+",
       color: "text-green-500",
     },
     {
       icon: Zap,
       label: "Technologies",
-      value: "20+",
+      value: 20,
+      suffix: "+",
       color: "text-purple-500",
     },
   ];
@@ -158,7 +172,12 @@ export function ProjectsSection() {
                 <stat.icon className={`w-8 h-8 ${stat.color}`} />
               </div>
               <div className="text-3xl font-bold text-gray-900 dark:text-white mb-2">
-                {stat.value}
+                <AnimatedCounter
+                  value={stat.value}
+                  suffix={stat.suffix}
+                  duration={2.5}
+                  delay={0.5 + index * 0.2}
+                />
               </div>
               <div className="text-sm text-gray-500 dark:text-gray-400 font-medium">
                 {stat.label}
@@ -285,8 +304,9 @@ export function ProjectsSection() {
               Interested in Working Together?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg mb-8 max-w-2xl mx-auto">
-              I'm always excited to take on new projects and collaborate with
-              amazing people. Let's create something incredible together!
+              I&apos;m always excited to take on new projects and collaborate
+              with amazing people. Let&apos;s create something incredible
+              together!
             </p>
             <motion.button
               className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200"
