@@ -6,6 +6,7 @@ import { useRef, useState } from "react";
 import { projects } from "@/data";
 import { Project } from "@/types";
 import { AnimatedCounter } from "../ui/animated-counter";
+import Image from "next/image";
 import {
   ExternalLink,
   Github,
@@ -340,8 +341,13 @@ function ModernProjectCard({
         onClick={onClick}
       >
         <div className="flex items-center space-x-6">
-          <div className="w-20 h-20 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200">
-            <Code className="w-10 h-10 text-white" />
+          <div className="w-20 h-20 relative rounded-xl overflow-hidden flex items-center justify-center group-hover:scale-110 transition-transform duration-200 bg-gradient-to-br from-blue-500 to-indigo-500">
+            <Image
+              src={project.image}
+              alt={project.title}
+              fill
+              className="object-cover"
+            />
           </div>
 
           <div className="flex-1">
@@ -415,9 +421,13 @@ function ModernProjectCard({
       {/* Project Image */}
       <div className="relative h-48 bg-gradient-to-br from-blue-500 to-indigo-500 overflow-hidden">
         <div className="absolute inset-0 bg-black/20" />
-        <div className="absolute inset-0 flex items-center justify-center">
-          <Code className="w-16 h-16 text-white/80" />
-        </div>
+
+        <Image
+          src={project.image}
+          alt={project.title}
+          fill
+          className="object-cover"
+        />
         {project.featured && (
           <div className="absolute top-4 right-4">
             <Star className="w-6 h-6 text-yellow-400 fill-current" />
@@ -526,8 +536,13 @@ function ProjectModal({
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
-            <div className="h-64 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl mb-6 flex items-center justify-center">
-              <Code className="w-20 h-20 text-white/80" />
+            <div className="h-64 bg-gradient-to-br from-blue-500 to-indigo-500 rounded-2xl mb-6 relative overflow-hidden">
+              <Image
+                src={project.image}
+                alt={project.title}
+                fill
+                className="object-cover"
+              />
             </div>
 
             <div className="flex items-center space-x-4 mb-6">

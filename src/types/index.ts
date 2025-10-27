@@ -1,9 +1,11 @@
+import { StaticImageData } from "next/image";
+
 export interface Project {
   id: string;
   title: string;
   description: string;
   longDescription: string;
-  image: string;
+  image: string | StaticImageData;
   technologies: string[];
   githubUrl?: string;
   liveUrl?: string;
@@ -44,4 +46,16 @@ export interface ContactForm {
   name: string;
   email: string;
   message: string;
+}
+
+export interface PersonalInfo {
+  name: string;
+  title: string;
+  subtitle: string;
+  bio: string;
+  email: string;
+  location: string;
+  github: string;
+  linkedin: string;
+  twitter: string;
 }
