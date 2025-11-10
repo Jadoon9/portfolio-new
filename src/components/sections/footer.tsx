@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from 'framer-motion';
-import { Github, Linkedin, Mail, Heart } from 'lucide-react';
+import { motion } from "framer-motion";
+import { Github, Linkedin, Mail, Heart } from "lucide-react";
 
 export function Footer() {
   const currentYear = new Date().getFullYear();
@@ -17,13 +17,16 @@ export function Footer() {
             transition={{ duration: 0.6 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-2xl font-display font-bold mb-4">Shahzeb Jadoon</h3>
+            <h3 className="text-2xl font-display font-bold mb-4">
+              Shahzeb Jadoon
+            </h3>
             <p className="text-gray-400 mb-6">
-              Front-End Developer passionate about creating beautiful, performant web experiences.
+              Front-End Developer passionate about creating beautiful,
+              performant web experiences.
             </p>
             <div className="flex space-x-4">
               <motion.a
-                href="https://github.com/shahzebjadoon"
+                href="https://github.com/Jadoon9"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
@@ -32,9 +35,9 @@ export function Footer() {
               >
                 <Github className="w-5 h-5" />
               </motion.a>
-              
+
               <motion.a
-                href="https://linkedin.com/in/shahzebjadoon"
+                href="https://www.linkedin.com/in/shahzeb-jadoon-8bb2949b/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
@@ -43,9 +46,9 @@ export function Footer() {
               >
                 <Linkedin className="w-5 h-5" />
               </motion.a>
-              
+
               <motion.a
-                href="mailto:shahzeb@example.com"
+                href="mailto:shahzebjadoon0@gmail.com"
                 className="w-10 h-10 bg-gray-800 rounded-lg flex items-center justify-center text-gray-400 hover:bg-primary hover:text-primary-foreground transition-colors duration-200"
                 whileHover={{ scale: 1.1, rotate: 5 }}
                 whileTap={{ scale: 0.9 }}
@@ -65,18 +68,18 @@ export function Footer() {
             <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
             <ul className="space-y-2">
               {[
-                { name: 'About', href: '#about' },
-                { name: 'Skills', href: '#skills' },
-                { name: 'Experience', href: '#experience' },
-                { name: 'Projects', href: '#projects' },
-                { name: 'Contact', href: '#contact' },
+                { name: "About", href: "#about" },
+                { name: "Skills", href: "#skills" },
+                { name: "Experience", href: "#experience" },
+                { name: "Projects", href: "#projects" },
+                { name: "Contact", href: "#contact" },
               ].map((link) => (
                 <li key={link.name}>
                   <motion.button
                     onClick={() => {
                       const element = document.querySelector(link.href);
                       if (element) {
-                        element.scrollIntoView({ behavior: 'smooth' });
+                        element.scrollIntoView({ behavior: "smooth" });
                       }
                     }}
                     className="text-gray-400 hover:text-white transition-colors duration-200"
@@ -98,9 +101,9 @@ export function Footer() {
           >
             <h4 className="text-lg font-semibold mb-4">Get In Touch</h4>
             <div className="space-y-3 text-gray-400">
-              <p>shahzeb@example.com</p>
-              <p>+1 (555) 123-4567</p>
-              <p>San Francisco, CA</p>
+              <p>shahzebjadoon0@gmail.com</p>
+              <p>+92333 5238812</p>
+              <p>Lahore, Pakistan</p>
             </div>
           </motion.div>
         </div>
@@ -116,7 +119,7 @@ export function Footer() {
           <p className="text-gray-400 text-sm mb-4 md:mb-0">
             © {currentYear} Shahzeb Jadoon. All rights reserved.
           </p>
-          
+
           <motion.p
             className="text-gray-400 text-sm flex items-center space-x-1"
             whileHover={{ scale: 1.05 }}

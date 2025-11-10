@@ -16,10 +16,10 @@ export const personalInfo: PersonalInfo = {
   title: "Front-End Developer",
   subtitle: "React.js & MERN Stack Specialist",
   bio: "Passionate Front-End Developer with expertise in building modern, scalable web applications using React.js, Next.js, and the MERN stack. I specialize in creating stunning user interfaces with exceptional performance and user experience.",
-  email: "shahzeb.jadoon@example.com",
-  location: "Pakistan",
-  github: "https://github.com/shahzeb-jadoon",
-  linkedin: "https://linkedin.com/in/shahzeb-jadoon",
+  email: "shahzebjadoon0@gmail.com",
+  location: "Lahore, Pakistan",
+  github: "https://github.com/Jadoon9",
+  linkedin: "https://www.linkedin.com/in/shahzeb-jadoon-8bb2949b/",
   twitter: "https://twitter.com/shahzeb_jadoon",
 };
 

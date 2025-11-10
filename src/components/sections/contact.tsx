@@ -20,6 +20,7 @@ import {
   ArrowRight,
   Copy,
   Check,
+  Download,
 } from "lucide-react";
 
 export function ContactSection() {
@@ -34,6 +35,7 @@ export function ContactSection() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [hoveredField, setHoveredField] = useState<string | null>(null);
   const [copiedEmail, setCopiedEmail] = useState(false);
+  const [isDownloadingResume, setIsDownloadingResume] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -63,7 +65,7 @@ export function ContactSection() {
 
   const copyEmail = async () => {
     try {
-      await navigator.clipboard.writeText("shahzeb@example.com");
+      await navigator.clipboard.writeText("shahzebjadoon0@gmail.com");
       setCopiedEmail(true);
       setTimeout(() => setCopiedEmail(false), 2000);
     } catch (err) {
@@ -71,11 +73,25 @@ export function ContactSection() {
     }
   };
 
+  const handleResumeDownload = () => {
+    setIsDownloadingResume(true);
+    // Create a link element and trigger download
+    const link = document.createElement("a");
+    link.href = "/resume.pdf"; // Update this path to your actual resume file
+    link.download = "Shahzeb_Jadoon_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Reset downloading state after animation
+    setTimeout(() => setIsDownloadingResume(false), 2000);
+  };
+
   const contactMethods = [
     {
       icon: Mail,
       title: "Email",
-      value: "shahzeb@example.com",
+      value: "shahzebjadoon0@gmail.com",
       description: "Send me an email anytime",
       color: "from-red-500 to-pink-500",
       action: copyEmail,
@@ -83,37 +99,45 @@ export function ContactSection() {
     {
       icon: Phone,
       title: "Phone",
-      value: "+1 (555) 123-4567",
+      value: "+92333 5238812",
       description: "Call me for urgent matters",
       color: "from-green-500 to-emerald-500",
-      action: () => window.open("tel:+15551234567"),
+      action: () => window.open("tel:+923335238812"),
     },
     {
       icon: MapPin,
       title: "Location",
-      value: "San Francisco, CA",
-      description: "Based in the Bay Area",
+      value: "Lahore, Pakistan",
+      description: "Based in Lahore, Pakistan",
       color: "from-blue-500 to-cyan-500",
-      action: () => window.open("https://maps.google.com/?q=San+Francisco,CA"),
+      action: () => window.open("https://maps.google.com/?q=Lahore,Pakistan"),
+    },
+    {
+      icon: Download,
+      title: "Resume",
+      value: "Download PDF",
+      description: "Get my latest resume",
+      color: "from-purple-500 to-indigo-500",
+      action: handleResumeDownload,
     },
   ];
 
   const socialLinks = [
     {
       icon: Github,
-      href: "https://github.com/shahzebjadoon",
+      href: "https://github.com/Jadoon9",
       label: "GitHub",
       color: "hover:text-gray-900 dark:hover:text-white",
     },
     {
       icon: Linkedin,
-      href: "https://linkedin.com/in/shahzebjadoon",
+      href: "https://www.linkedin.com/in/shahzeb-jadoon-8bb2949b/",
       label: "LinkedIn",
       color: "hover:text-blue-600",
     },
     {
       icon: Mail,
-      href: "mailto:shahzeb@example.com",
+      href: "mailto:shahzebjadoon0@gmail.com",
       label: "Email",
       color: "hover:text-red-500",
     },
@@ -176,7 +200,7 @@ export function ContactSection() {
             transition={{ duration: 0.6, delay: 0.2 }}
           >
             <Heart className="w-5 h-5" />
-            <span>Let's Connect</span>
+            <span>Let&apos;s Connect</span>
           </motion.div>
 
           <h2 className="text-5xl md:text-6xl font-display font-bold text-gray-900 dark:text-white mb-8">
@@ -186,8 +210,8 @@ export function ContactSection() {
             </span>
           </h2>
           <p className="text-xl md:text-2xl text-gray-600 dark:text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Have a project in mind or want to collaborate? I'd love to hear from
-            you. Let's create something amazing together.
+            Have a project in mind or want to collaborate? I&apos;d love to hear
+            from you. Let&apos;s create something amazing together.
           </p>
         </motion.div>
 
@@ -202,10 +226,10 @@ export function ContactSection() {
             <div>
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-6 flex items-center">
                 <MessageSquare className="w-8 h-8 text-blue-500 mr-3" />
-                Let's Start a Conversation
+                Let&apos;s Start a Conversation
               </h3>
               <p className="text-gray-600 dark:text-gray-300 text-lg leading-relaxed mb-8">
-                I'm always interested in new opportunities and exciting
+                I&apos;m always interested in new opportunities and exciting
                 projects. Whether you have a question or just want to say hi,
                 feel free to reach out!
               </p>
@@ -228,16 +252,36 @@ export function ContactSection() {
                 >
                   <div className="flex items-center space-x-4">
                     <div
-                      className={`w-14 h-14 bg-gradient-to-r ${method.color} rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200`}
+                      className={`w-14 h-14 bg-gradient-to-r ${
+                        method.color
+                      } rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-200 ${
+                        method.title === "Resume" && isDownloadingResume
+                          ? "animate-pulse"
+                          : ""
+                      }`}
                     >
-                      <method.icon className="w-7 h-7 text-white" />
+                      {method.title === "Resume" && isDownloadingResume ? (
+                        <motion.div
+                          className="w-7 h-7 border-2 border-white border-t-transparent rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
+                        />
+                      ) : (
+                        <method.icon className="w-7 h-7 text-white" />
+                      )}
                     </div>
                     <div className="flex-1">
                       <h4 className="font-bold text-gray-900 dark:text-white text-lg mb-1">
                         {method.title}
                       </h4>
                       <p className="text-gray-600 dark:text-gray-300 font-medium">
-                        {method.value}
+                        {method.title === "Resume" && isDownloadingResume
+                          ? "Downloading..."
+                          : method.value}
                       </p>
                       <p className="text-sm text-gray-500 dark:text-gray-400">
                         {method.description}
@@ -250,6 +294,19 @@ export function ContactSection() {
                         ) : (
                           <Copy className="w-5 h-5 text-gray-400 group-hover:text-blue-500 transition-colors duration-200" />
                         )}
+                      </div>
+                    )}
+                    {method.title === "Resume" && isDownloadingResume && (
+                      <div className="flex items-center space-x-2">
+                        <motion.div
+                          className="w-5 h-5 border-2 border-purple-500 border-t-transparent rounded-full"
+                          animate={{ rotate: 360 }}
+                          transition={{
+                            duration: 1,
+                            repeat: Infinity,
+                            ease: "linear",
+                          }}
+                        />
                       </div>
                     )}
                   </div>
@@ -435,7 +492,7 @@ export function ContactSection() {
                   <div className="flex items-center space-x-3">
                     <CheckCircle className="w-5 h-5 text-green-500" />
                     <p className="text-green-700 dark:text-green-300 font-medium">
-                      Thank you! I'll get back to you within 24 hours.
+                      Thank you! I&apos;ll get back to you within 24 hours.
                     </p>
                   </div>
                 </motion.div>
@@ -457,7 +514,7 @@ export function ContactSection() {
               Why Work With Me?
             </h3>
             <p className="text-gray-600 dark:text-gray-300 text-lg">
-              Here's what makes our collaboration special
+              Here&apos;s what makes our collaboration special
             </p>
           </div>
 

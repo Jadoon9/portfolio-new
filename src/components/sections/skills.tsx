@@ -205,8 +205,6 @@ export function SkillsSection() {
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <category.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200" />
-              <span>{category.label}</span>
               {selectedCategory === category.id && (
                 <motion.div
                   className={`absolute inset-0 bg-gradient-to-r ${category.color} rounded-2xl`}
@@ -214,6 +212,8 @@ export function SkillsSection() {
                   transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                 />
               )}
+              <category.icon className="w-5 h-5 group-hover:scale-110 transition-transform duration-200 relative z-10" />
+              <span className="relative z-10">{category.label}</span>
             </motion.button>
           ))}
         </motion.div>

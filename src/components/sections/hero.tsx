@@ -15,12 +15,14 @@ import {
   Star,
   Rocket,
   Sparkles,
+  Download,
 } from "lucide-react";
 import { AnimatedCounter } from "../ui/animated-counter";
 
 export function HeroSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [currentText, setCurrentText] = useState(0);
+  const [isDownloading, setIsDownloading] = useState(false);
 
   const texts = [
     "Front-End Developer",
@@ -51,10 +53,24 @@ export function HeroSection() {
     }
   };
 
+  const handleResumeDownload = () => {
+    setIsDownloading(true);
+    // Create a link element and trigger download
+    const link = document.createElement("a");
+    link.href = "/resume.pdf"; // Update this path to your actual resume file
+    link.download = "Shahzeb_Jadoon_Resume.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+
+    // Reset downloading state after animation
+    setTimeout(() => setIsDownloading(false), 2000);
+  };
+
   return (
     <section
       id="home"
-      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900"
+      className="min-h-screen flex items-center justify-center relative overflow-hidden bg-gradient-to-br from-indigo-900 via-purple-900 to-pink-900 dark:from-gray-900 dark:via-indigo-900 dark:to-purple-900 pt-16"
     >
       {/* Animated Background Elements */}
       <div className="absolute inset-0">
@@ -227,6 +243,36 @@ export function HeroSection() {
             </motion.button>
 
             <motion.button
+              onClick={handleResumeDownload}
+              disabled={isDownloading}
+              className="group relative px-8 py-4 border-2 border-purple-400/50 bg-purple-500/20 backdrop-blur-md text-white rounded-full font-semibold text-lg hover:bg-purple-500/30 hover:border-purple-300 transition-all duration-300 shadow-lg"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="relative z-10 flex items-center space-x-2">
+                {isDownloading ? (
+                  <>
+                    <motion.div
+                      className="w-5 h-5 border-2 border-white border-t-transparent rounded-full"
+                      animate={{ rotate: 360 }}
+                      transition={{
+                        duration: 1,
+                        repeat: Infinity,
+                        ease: "linear",
+                      }}
+                    />
+                    <span>Downloading...</span>
+                  </>
+                ) : (
+                  <>
+                    <Download className="w-5 h-5 group-hover:animate-bounce" />
+                    <span>Download Resume</span>
+                  </>
+                )}
+              </span>
+            </motion.button>
+
+            <motion.button
               onClick={() => scrollToSection("#contact")}
               className="px-8 py-4 border-2 border-white/30 text-white rounded-full font-semibold text-lg backdrop-blur-md hover:bg-white/10 transition-all duration-300"
               whileHover={{ scale: 1.05, y: -2 }}
@@ -249,17 +295,17 @@ export function HeroSection() {
             {[
               {
                 icon: Github,
-                href: "https://github.com/shahzebjadoon",
+                href: "https://github.com/Jadoon9",
                 color: "hover:text-gray-300",
               },
               {
                 icon: Linkedin,
-                href: "https://linkedin.com/in/shahzebjadoon",
+                href: "https://www.linkedin.com/in/shahzeb-jadoon-8bb2949b/",
                 color: "hover:text-blue-400",
               },
               {
                 icon: Mail,
-                href: "mailto:shahzeb@example.com",
+                href: "mailto:shahzebjadoon0@gmail.com",
                 color: "hover:text-red-400",
               },
             ].map((social, index) => (

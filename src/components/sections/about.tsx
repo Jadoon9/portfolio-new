@@ -9,7 +9,6 @@ import {
   Coffee,
   Heart,
   Users,
-  Award,
   Zap,
   Globe,
   Rocket,
@@ -57,36 +56,36 @@ export function AboutSection() {
 
   const achievements = [
     {
-      icon: Award,
-      value: 5,
-      suffix: "+ Years",
-      subtitle: "Experience",
-      color: "text-yellow-500",
-      bgColor: "from-yellow-400 to-orange-500",
-    },
-    {
-      icon: Globe,
-      value: 50,
-      suffix: "+",
-      subtitle: "Projects",
+      icon: Code,
+      value: 100,
+      suffix: "K+",
+      subtitle: "Lines of Code",
       color: "text-blue-500",
       bgColor: "from-blue-400 to-cyan-500",
     },
     {
-      icon: Users,
-      value: 20,
+      icon: Rocket,
+      value: 25,
       suffix: "+",
-      subtitle: "Clients",
-      color: "text-green-500",
-      bgColor: "from-green-400 to-emerald-500",
-    },
-    {
-      icon: Zap,
-      value: 15,
-      suffix: "+",
-      subtitle: "Technologies",
+      subtitle: "Live Projects",
       color: "text-purple-500",
       bgColor: "from-purple-400 to-pink-500",
+    },
+    {
+      icon: Lightbulb,
+      value: 10,
+      suffix: "+",
+      subtitle: "Open Source",
+      color: "text-yellow-500",
+      bgColor: "from-yellow-400 to-orange-500",
+    },
+    {
+      icon: Target,
+      value: 98,
+      suffix: "%",
+      subtitle: "Client Satisfaction",
+      color: "text-green-500",
+      bgColor: "from-green-400 to-emerald-500",
     },
   ];
 
@@ -182,12 +181,12 @@ export function AboutSection() {
           animate={isInView ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8, delay: 0.3 }}
         >
-          <div className="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700">
+          <div className="bg-white dark:bg-gray-800 p-2 rounded-2xl shadow-lg border border-gray-200 dark:border-gray-700 flex gap-2">
             {tabs.map((tab) => (
               <motion.button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`relative px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center space-x-2 ${
+                className={`relative flex-1 px-6 py-3 rounded-xl font-medium transition-all duration-300 flex items-center justify-center space-x-2 whitespace-nowrap ${
                   activeTab === tab.id
                     ? "text-white"
                     : "text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white"
@@ -195,8 +194,6 @@ export function AboutSection() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <tab.icon className="w-4 h-4" />
-                <span>{tab.label}</span>
                 {activeTab === tab.id && (
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-blue-600 to-indigo-600 rounded-xl"
@@ -204,6 +201,8 @@ export function AboutSection() {
                     transition={{ type: "spring", bounce: 0.2, duration: 0.6 }}
                   />
                 )}
+                <tab.icon className="w-4 h-4 relative z-10 flex-shrink-0" />
+                <span className="relative z-10">{tab.label}</span>
               </motion.button>
             ))}
           </div>
@@ -409,12 +408,14 @@ export function AboutSection() {
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}
             >
-              <div className="w-96 h-96 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl relative overflow-hidden">
+              <div className="w-96 h-96 bg-gradient-to-br from-blue-500 via-indigo-500 to-purple-600 rounded-full flex items-center justify-center shadow-2xl relative">
                 <div className="w-92 h-92 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center">
                   <div className="w-88 h-88 bg-gradient-to-br from-blue-100 to-indigo-100 dark:from-gray-700 dark:to-gray-600 rounded-full flex items-center justify-center">
                     <div className="w-84 h-84 bg-gradient-to-br from-blue-200 to-indigo-200 dark:from-gray-600 dark:to-gray-500 rounded-full flex items-center justify-center">
-                      <div className="w-80 h-80 bg-gradient-to-br from-blue-300 to-indigo-300 dark:from-gray-500 dark:to-gray-400 rounded-full flex items-center justify-center">
-                        <Users className="w-48 h-48 text-blue-600 dark:text-blue-400" />
+                      <div className="w-80 h-80 bg-gradient-to-br from-blue-500 to-indigo-600 rounded-full flex items-center justify-center shadow-inner">
+                        <span className="text-7xl font-bold text-white">
+                          SJ
+                        </span>
                       </div>
                     </div>
                   </div>
@@ -422,7 +423,7 @@ export function AboutSection() {
 
                 {/* Enhanced floating elements around avatar - Optimized */}
                 <motion.div
-                  className="absolute -top-8 -right-8 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 dark:border-blue-800"
+                  className="absolute -top-8 -right-8 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-blue-200 dark:border-blue-800 z-20"
                   animate={{ y: [0, -10, 0], rotate: [0, 5, 0] }}
                   transition={{
                     duration: 8,
@@ -434,7 +435,7 @@ export function AboutSection() {
                 </motion.div>
 
                 <motion.div
-                  className="absolute top-1/2 -right-12 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-indigo-200 dark:border-indigo-800"
+                  className="absolute top-1/2 -right-12 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-indigo-200 dark:border-indigo-800 z-20"
                   animate={{ y: [0, 12, 0], rotate: [0, -5, 0] }}
                   transition={{
                     duration: 10,
@@ -446,7 +447,7 @@ export function AboutSection() {
                 </motion.div>
 
                 <motion.div
-                  className="absolute -bottom-8 -left-8 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-purple-200 dark:border-purple-800"
+                  className="absolute -bottom-8 -left-8 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-purple-200 dark:border-purple-800 z-20"
                   animate={{ y: [0, -8, 0], rotate: [0, 8, 0] }}
                   transition={{
                     duration: 7,
@@ -458,7 +459,7 @@ export function AboutSection() {
                 </motion.div>
 
                 <motion.div
-                  className="absolute top-1/2 -left-12 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-green-200 dark:border-green-800"
+                  className="absolute top-1/2 -left-12 w-20 h-20 bg-white dark:bg-gray-800 rounded-full flex items-center justify-center shadow-lg border-2 border-green-200 dark:border-green-800 z-20"
                   animate={{ y: [0, -12, 0], rotate: [0, -8, 0] }}
                   transition={{
                     duration: 9,

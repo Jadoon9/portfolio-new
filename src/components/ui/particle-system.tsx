@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 import { motion } from "framer-motion";
 
 interface Particle {
@@ -26,49 +26,46 @@ export function ParticleSystem({
   className = "",
 }: ParticleSystemProps) {
   const [particles, setParticles] = useState<Particle[]>([]);
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const mousePositionRef = useRef({ x: 0, y: 0 });
+  const animationFrameRef = useRef<number | null>(null);
+  const isAnimationStartedRef = useRef(false);
 
+  // Initialize particles and start animation
   useEffect(() => {
-    // Initialize particles
-    const initialParticles: Particle[] = Array.from(
-      { length: particleCount },
-      (_, i) => ({
-        id: i,
-        x: Math.random() * window.innerWidth,
-        y: Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 2,
-        vy: (Math.random() - 0.5) * 2,
-        size: Math.random() * 4 + 1,
-        color: colors[Math.floor(Math.random() * colors.length)],
-        life: Math.random() * 100 + 50,
-      })
-    );
+    if (typeof window === "undefined" || isAnimationStartedRef.current) return;
+    isAnimationStartedRef.current = true;
 
-    setParticles(initialParticles);
-
-    // Mouse move handler
+    // Mouse move handler - update ref instead of state
     const handleMouseMove = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
+      mousePositionRef.current = { x: e.clientX, y: e.clientY };
     };
 
     window.addEventListener("mousemove", handleMouseMove);
 
     // Animation loop
+    let isRunning = true;
     const animate = () => {
-      setParticles((prevParticles) =>
-        prevParticles
+      if (!isRunning) return;
+
+      setParticles((prevParticles) => {
+        if (prevParticles.length === 0) {
+          return prevParticles;
+        }
+
+        return prevParticles
           .map((particle) => {
             let newX = particle.x + particle.vx;
             let newY = particle.y + particle.vy;
             let newVx = particle.vx;
             let newVy = particle.vy;
 
-            // Mouse interaction
-            const dx = mousePosition.x - particle.x;
-            const dy = mousePosition.y - particle.y;
+            // Mouse interaction - use ref to get latest position
+            const mousePos = mousePositionRef.current;
+            const dx = mousePos.x - particle.x;
+            const dy = mousePos.y - particle.y;
             const distance = Math.sqrt(dx * dx + dy * dy);
 
-            if (distance < 100) {
+            if (distance < 100 && distance > 0) {
               const force = (100 - distance) / 100;
               newVx += (dx / distance) * force * 0.1;
               newVy += (dy / distance) * force * 0.1;
@@ -97,19 +94,46 @@ export function ParticleSystem({
               life: particle.life - 0.5,
             };
           })
-          .filter((particle) => particle.life > 0)
-      );
+          .filter((particle) => particle.life > 0);
+      });
 
-      requestAnimationFrame(animate);
+      if (isRunning) {
+        animationFrameRef.current = requestAnimationFrame(animate);
+      }
     };
 
-    const animationId = requestAnimationFrame(animate);
+    // Initialize particles and start animation
+    const initParticles = () => {
+      const initialParticles: Particle[] = Array.from(
+        { length: particleCount },
+        (_, i) => ({
+          id: i,
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
+          vx: (Math.random() - 0.5) * 2,
+          vy: (Math.random() - 0.5) * 2,
+          size: Math.random() * 4 + 1,
+          color: colors[Math.floor(Math.random() * colors.length)],
+          life: Math.random() * 100 + 50,
+        })
+      );
+      setParticles(initialParticles);
+      // Start animation after particles are set
+      animationFrameRef.current = requestAnimationFrame(animate);
+    };
+
+    // Use requestAnimationFrame to defer state update
+    requestAnimationFrame(initParticles);
 
     return () => {
+      isRunning = false;
       window.removeEventListener("mousemove", handleMouseMove);
-      cancelAnimationFrame(animationId);
+      if (animationFrameRef.current !== null) {
+        cancelAnimationFrame(animationFrameRef.current);
+        animationFrameRef.current = null;
+      }
     };
-  }, [particleCount, colors, mousePosition]);
+  }, [particleCount, colors]);
 
   return (
     <div className={`fixed inset-0 pointer-events-none z-10 ${className}`}>
