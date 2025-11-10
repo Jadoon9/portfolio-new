@@ -378,8 +378,8 @@ export function SkillsSection() {
               Learning Journey
             </h3>
             <p className="text-gray-600 dark:text-gray-300">
-              Always learning, always growing. Here's what I'm currently
-              exploring!
+              Always learning, always growing. Here&apos;s what I&apos;m
+              currently exploring!
             </p>
           </div>
 
