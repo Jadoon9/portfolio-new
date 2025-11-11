@@ -31,6 +31,7 @@ export function ProjectsSection() {
   const [viewMode, setViewMode] = useState<"grid" | "list">("grid");
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedTech, setSelectedTech] = useState<string>("all");
+  const [isButtonHovered, setIsButtonHovered] = useState(false);
 
   // Get all unique technologies
   const allTechnologies = Array.from(
@@ -310,12 +311,71 @@ export function ProjectsSection() {
               together!
             </p>
             <motion.button
-              className="inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold hover:from-blue-700 hover:to-indigo-700 transition-all duration-200"
+              onClick={() => {
+                const contactSection = document.querySelector("#contact");
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: "smooth" });
+                }
+              }}
+              onHoverStart={() => setIsButtonHovered(true)}
+              onHoverEnd={() => setIsButtonHovered(false)}
+              className="group relative inline-flex items-center space-x-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 text-white rounded-xl font-semibold overflow-hidden transition-all duration-300 shadow-lg hover:shadow-2xl"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
             >
-              <span>Start a Project</span>
-              <ArrowRight className="w-5 h-5" />
+              {/* Animated background gradient */}
+              <motion.div
+                className="absolute inset-0 bg-gradient-to-r from-blue-500 via-indigo-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+                animate={{
+                  opacity: isButtonHovered ? [0.5, 1, 0.5] : 0,
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: isButtonHovered ? Infinity : 0,
+                  ease: "easeInOut",
+                }}
+              />
+
+              {/* Ripple effect on click */}
+              <motion.div
+                className="absolute inset-0 bg-white rounded-full opacity-0"
+                initial={{ scale: 0, opacity: 0.5 }}
+                whileTap={{
+                  scale: 2,
+                  opacity: [0.5, 0],
+                }}
+                transition={{ duration: 0.6 }}
+              />
+
+              {/* Content */}
+              <span className="relative z-10 flex items-center space-x-2">
+                <span>Start a Project</span>
+                <motion.div
+                  animate={{
+                    x: isButtonHovered ? [0, 4, 0] : 0,
+                  }}
+                  transition={{
+                    duration: 1,
+                    repeat: isButtonHovered ? Infinity : 0,
+                    ease: "easeInOut",
+                  }}
+                >
+                  <ArrowRight className="w-5 h-5" />
+                </motion.div>
+              </span>
+
+              {/* Glow effect */}
+              <motion.div
+                className="absolute inset-0 rounded-xl bg-white opacity-0 blur-xl"
+                animate={{
+                  opacity: isButtonHovered ? [0, 0.3, 0] : 0,
+                }}
+                transition={{
+                  duration: 2,
+                  repeat: isButtonHovered ? Infinity : 0,
+                  ease: "easeInOut",
+                }}
+              />
             </motion.button>
           </div>
         </motion.div>

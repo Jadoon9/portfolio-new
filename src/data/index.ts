@@ -10,6 +10,7 @@ import wonderRawImg from "../../public/wonder-raw.png";
 import firmSanadImg from "../../public/firm-sanad.png";
 import simpleStudyImg from "../../public/simple-study.png";
 import eqlizeImg from "../../public/eqlize-now.png";
+import acrosoftImg from "../../public/acrosoft.png";
 
 export const personalInfo: PersonalInfo = {
   name: "Shahzeb Jadoon",
@@ -165,6 +166,24 @@ export const projects: Project[] = [
     liveUrl: "https://www.eqlizenow.com/",
     featured: true,
   },
+  {
+    id: "10",
+    title: "Acrosoft.io",
+    description:
+      "Company portfolio website showcasing products and services using modern MERN stack architecture with responsive design and interactive UI components.",
+    longDescription:
+      "Developed company portfolio website showcasing products and services using modern MERN stack architecture. Implemented responsive design with interactive UI components and optimized performance for enterprise-grade solutions. Built with Next.js, TypeScript, Tailwind CSS, and Shadcn for a modern, scalable web presence.",
+    image: acrosoftImg,
+    technologies: [
+      "Next.js",
+      "TypeScript",
+      "Tailwind CSS",
+      "Shadcn",
+      "MERN Stack",
+    ],
+    liveUrl: "https://acrosoft.io/",
+    featured: true,
+  },
 ];
 
 export const skills: Skill[] = [
@@ -203,15 +222,7 @@ export const experiences: Experience[] = [
     location: "Pakistan",
     description:
       "Leading the front-end development team, architecting scalable web applications and mentoring junior developers.",
-    technologies: [
-      "React",
-      "Next.js",
-      "TypeScript",
-      "Tailwind CSS",
-      "Redux",
-      "Node.js",
-      "MongoDB",
-    ],
+    technologies: ["React", "Next.js", "TypeScript", "Tailwind CSS", "Shadcn"],
     current: true,
     responsibilities: [
       "Lead the front-end development team and oversee project architecture",
