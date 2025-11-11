@@ -1,0 +1,271 @@
+SHAHZEB JADOON
+Senior Front-End Developer | React.js & Next.js Specialist
+
++92 3335238812 | Lahore, Pakistan | shahzebjadoon0@gmail.com
+Portfolio | LinkedIn: https://www.linkedin.com/in/shahzeb-jadoon-8bb2949b/ | GitHub: https://github.com/Jadoon9
+
+================================================================================
+PROFESSIONAL SUMMARY
+================================================================================
+
+Senior Front-End Developer with 5+ years of experience in React.js, Next.js, and MERN stack architecture. Expert in Redux, React Query, GraphQL, and performance optimization, delivering 40%+ performance improvements. Proven leader with experience mentoring teams and driving technical excellence in Agile environments.
+
+================================================================================
+TECHNICAL SKILLS
+================================================================================
+
+Front-End Development:
+React.js, Next.js, JavaScript (ES6+), TypeScript, HTML5, CSS3, SCSS/SASS, JSX, 
+DOM Manipulation, Event Handling, Component Lifecycle, Tailwind CSS, Bootstrap, 
+Material-UI, Shadcn, Ant Design, Chakra UI, Styled Components, CSS Modules
+
+MERN Stack Architecture:
+MongoDB (NoSQL Database), Express.js (Backend Framework), React.js (Frontend 
+Library), Node.js (Runtime Environment), RESTful API Design, Full-Stack 
+Integration, Mongoose ODM
+
+State Management & Data Fetching:
+Redux, Redux Toolkit, React Query, Context API, Zustand, SWR, Axios, Fetch API
+
+Form Handling & Validation:
+Formik, React Hook Form, Yup, Zod, React Final Form
+
+Backend Technologies:
+Node.js, Express.js, MongoDB, Mongoose, SQL Server, MySQL, PostgreSQL, ASP.NET, 
+REST APIs, GraphQL
+
+Data Structures & Algorithms:
+Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables, Big O Notation, 
+Time & Space Complexity Analysis, Sorting Algorithms, Search Algorithms, 
+Algorithm Optimization
+
+Version Control & Collaboration:
+Git, GitHub, Bitbucket, GitLab, Git Flow, Branching Strategies
+
+Performance Optimization:
+Code Splitting, Lazy Loading, Memoization, Bundle Optimization, Caching Strategies, 
+Virtual DOM, React.memo, useMemo, useCallback
+
+Data Visualization:
+D3.js, Chart.js, Recharts, Victory, ApexCharts
+
+3D Visualization & Graphics:
+Three.js, Babylon.js
+
+Mapping & Geolocation:
+Mapbox Geolocation APIs, Leaflet
+
+API Integration:
+RESTful APIs, GraphQL, WebSocket APIs, REST Architecture, HTTP Methods, 
+Authentication (JWT, OAuth)
+
+Medical Imaging:
+DICOM Integration
+
+Deployment & Cloud:
+AWS, Vercel, Firebase, Netlify, Docker, CI/CD Pipelines
+
+Methodologies:
+Agile, Scrum, Kanban, Test-Driven Development (TDD)
+
+================================================================================
+PROFESSIONAL EXPERIENCE
+================================================================================
+
+LEAD FRONT-END DEVELOPER
+Acrosoft | Pakistan
+July 2025 - Present
+
+• Lead front-end development team of 5+ developers, architecting scalable React.js and Next.js 
+  applications with TypeScript, establishing design systems and component libraries that improved 
+  code reusability by 50%+
+• Mentor junior developers through code reviews and technical training sessions, establishing 
+  development standards and best practices that reduced bug rates by 30% and improved team 
+  productivity
+• Optimize application performance through advanced techniques including code splitting, lazy loading, 
+  and caching strategies, resulting in 40%+ improvement in load times and enhanced user experience 
+  across all projects
+
+-------------------------------------------------------------------------------
+
+SENIOR FRONT-END DEVELOPER
+StarsAI | Dubai, UAE
+October 2024 - June 2025
+
+• Led end-to-end development and delivery of React.js, Node.js, and GraphQL projects across four 
+  distinct user panels, ensuring timely completion and high-quality standards while managing project 
+  timelines and coordinating with cross-functional teams
+• Engineered scalable state management solutions using Redux and React Query, implementing efficient 
+  data fetching and caching strategies that improved application performance by 40%+ and reduced API 
+  calls by 35%
+• Integrated AI-powered features and enhanced data visualization capabilities using D3.js and Chart.js, 
+  creating interactive dashboards and analytics tools that improved user engagement and provided 
+  actionable insights for business decisions
+
+-------------------------------------------------------------------------------
+
+SENIOR FRONT-END DEVELOPER
+Samaritan Technologies | Lahore, Pakistan
+December 2022 - October 2024
+
+• Designed and developed responsive, high-performance React.js applications with RESTful API 
+  integration, implementing modern UI patterns and ensuring cross-browser compatibility, resulting in 
+  improved user satisfaction scores
+• Implemented advanced performance optimization techniques including lazy loading, code splitting, and 
+  bundle optimization, reducing initial load times by 35% and improving Core Web Vitals scores 
+  significantly
+• Built interactive mapping features and geospatial data visualization using Mapbox Geolocation APIs 
+  and Leaflet, enabling location-based services that enhanced user experience and supported business 
+  location tracking requirements
+
+-------------------------------------------------------------------------------
+
+SENIOR FRONT-END DEVELOPER (Outsourced)
+JMM Innovations | Riyadh, Saudi Arabia
+April 2024 - September 2024
+
+• Directed end-to-end development of React.js, Node.js, and GraphQL applications, managing project 
+  lifecycle from conception to deployment, ensuring on-time delivery and maintaining high code quality 
+  standards throughout the development process
+• Optimized application performance by 45% through strategic implementation of lazy loading, advanced 
+  caching mechanisms, and optimized GraphQL queries, significantly improving user experience and 
+  reducing server load
+• Streamlined API integration workflows for RESTful APIs and GraphQL, establishing reusable patterns 
+  and error handling strategies that improved developer productivity and reduced integration time by 30%
+
+-------------------------------------------------------------------------------
+
+FRONT-END DEVELOPER
+NFinity Solutions | Lahore, Pakistan
+December 2019 - December 2022
+
+• Developed reusable React.js components with TypeScript and Next.js server-side rendering (SSR), 
+  establishing component libraries and design systems that improved SEO by 60% and ensured consistent 
+  UI across multiple applications
+• Implemented real-time communication features using WebSocket APIs, enabling live chat functionality 
+  and real-time data updates that enhanced user engagement and supported collaborative features across 
+  the platform
+• Built responsive user interfaces using Bootstrap and Material-UI with mobile-first design principles, 
+  ensuring optimal user experience across desktop, tablet, and mobile devices while maintaining 
+  accessibility standards
+
+================================================================================
+EDUCATION
+================================================================================
+
+BACHELOR OF SCIENCE IN COMPUTER SCIENCE
+Hazara University | Mansehra, Pakistan
+April 2013 - September 2017
+
+================================================================================
+KEY PROJECTS
+================================================================================
+
+STARSAI - AI-Powered Educational Management Platform
+React.js, Node.js, Tailwind CSS, Material-UI, Bootstrap, MongoDB, AWS
+October 2024 - Present | https://stars-ai.com/
+
+• Led front-end development for AI-powered educational platform with four user panels
+• Delivered bug fixes and new features, significantly boosting platform performance
+
+-------------------------------------------------------------------------------
+
+THE TUTOR - Online Tutoring Platform
+React.js, TypeScript, ASP.NET, SQL Server, Stripe, Bitbucket
+March 2023 - January 2024 | https://thetutor.me/
+
+• Spearheaded UI upgrades and integrated Stripe payment gateway for appointment booking system
+• Improved user engagement and conversion rates through streamlined interface
+
+-------------------------------------------------------------------------------
+
+SIMPLE STUDY - E-Learning Platform
+React.js, TypeScript, Django, MySQL, Tailwind CSS, Bootstrap
+December 2022 - October 2024 | https://studycrowd.ai/
+
+• Built comprehensive e-learning platform with course management and interactive video sessions
+• Enhanced user engagement with interactive study tools and scalable architecture
+
+-------------------------------------------------------------------------------
+
+EQLIZENOW - Rewards Platform
+React.js, Node.js, MongoDB, Tailwind CSS, React Query
+January 2024 - October 2024 | https://www.eqlizenow.com/
+
+• Led development of rewards platform with chain joining mechanism using React.js and Node.js
+• Improved user retention through innovative reward system and efficient state management
+
+-------------------------------------------------------------------------------
+
+JUMP RESUME BUILDER - ATS-Friendly Resume Builder
+Next.js 15, TypeScript, Tailwind CSS, Material-UI
+2024 | https://www.jumpresumebuilder.com/
+
+• Built ATS-friendly resume builder with 100+ templates, AI-powered suggestions, and PDF generation
+• Implemented multi-profile management and real-time editing capabilities
+
+-------------------------------------------------------------------------------
+
+JUMP RECRUITER EMPLOYER - Advanced Recruitment Platform
+Next.js 15, TypeScript, Tailwind CSS, Material-UI
+2024 | https://jumprecruiter.com/
+
+• Built comprehensive employer portal with job posting, candidate search, and analytics dashboard
+• Reduced time-to-hire by 40%+ through streamlined candidate management and tracking
+
+-------------------------------------------------------------------------------
+
+JUMP RECRUITER SEEKER - Modern Job Search Platform
+Next.js 15, TypeScript, Tailwind CSS, Material-UI
+2024 | https://qa.jumprecruiter.com/
+
+• Developed job seeker portal with advanced search, personalized recommendations, and application tracking
+• Improved job search efficiency and user engagement by 50%+
+
+-------------------------------------------------------------------------------
+
+ACROSOFT.IO - Company Portfolio Website
+React.js, Next.js, TypeScript, Tailwind CSS, MERN Stack
+2024 - Present | https://acrosoft.io/
+
+• Developed company portfolio website showcasing products and services using modern MERN stack architecture
+• Implemented responsive design with interactive UI components and optimized performance for enterprise-grade solutions
+
+================================================================================
+KEY ACHIEVEMENTS & CONTRIBUTIONS
+================================================================================
+
+• Led development of 15+ production applications serving thousands of users
+• Improved application performance by 40%+ through optimization techniques
+• Mentored 5+ junior developers, improving team productivity and code quality
+• Delivered projects with 100% on-time completion rate
+
+================================================================================
+CERTIFICATIONS & CONTINUOUS LEARNING
+================================================================================
+
+• Continuously staying updated with latest React.js and Next.js features and 
+  best practices
+• Active contributor to open-source projects and developer communities
+• Regular participation in tech conferences and web development workshops
+
+================================================================================
+LANGUAGES
+================================================================================
+
+English: Fluent (Professional Proficiency)
+Urdu: Native
+
+================================================================================
+AVAILABILITY
+================================================================================
+
+Available for full-time, contract, and remote opportunities. Open to 
+relocation for the right opportunity.
+
+================================================================================
+
+This resume is optimized for Applicant Tracking Systems (ATS) and international 
+recruiters. All technologies, skills, and achievements are clearly listed with 
+standard industry terminology for maximum compatibility.
+

@@ -77,7 +77,7 @@ export function ContactSection() {
     setIsDownloadingResume(true);
     // Create a link element and trigger download
     const link = document.createElement("a");
-    link.href = "/resume.pdf"; // Update this path to your actual resume file
+    link.href = "/Shahzeb Resume.pdf";
     link.download = "Shahzeb_Jadoon_Resume.pdf";
     document.body.appendChild(link);
     link.click();

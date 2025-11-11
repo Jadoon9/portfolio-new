@@ -1,0 +1,477 @@
+%-------------------------
+
+% Resume in Latex
+
+% Author : Jake Gutierrez
+
+% Based off of: https://github.com/sb2nov/resume
+
+% License : MIT
+
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+
+\usepackage[empty]{fullpage}
+
+\usepackage{titlesec}
+
+\usepackage{marvosym}
+
+\usepackage[usenames,dvipsnames]{color}
+
+\usepackage{verbatim}
+
+\usepackage{enumitem}
+
+\usepackage[hidelinks]{hyperref}
+
+\usepackage{fancyhdr}
+
+\usepackage[english]{babel}
+
+\usepackage{tabularx}
+
+\input{glyphtounicode}
+
+%----------FONT OPTIONS----------
+
+% sans-serif
+
+% \usepackage[sfdefault]{FiraSans}
+
+% \usepackage[sfdefault]{roboto}
+
+% \usepackage[sfdefault]{noto-sans}
+
+% \usepackage[default]{sourcesanspro}
+
+% serif
+
+% \usepackage{CormorantGaramond}
+
+% \usepackage{charter}
+
+\pagestyle{fancy}
+
+\fancyhf{} % clear all header and footer fields
+
+\fancyfoot{}
+
+\renewcommand{\headrulewidth}{0pt}
+
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+
+\addtolength{\oddsidemargin}{-0.5in}
+
+\addtolength{\evensidemargin}{-0.5in}
+
+\addtolength{\textwidth}{1in}
+
+\addtolength{\topmargin}{-.5in}
+
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+
+\raggedright
+
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+
+\titleformat{\section}{
+
+  \vspace{-4pt}\scshape\raggedright\large
+
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+% Ensure that generate pdf is machine readable/ATS parsable
+
+\pdfgentounicode=1
+
+%-------------------------
+
+% Custom commands
+
+\newcommand{\resumeItem}[1]{
+
+  \item\small{
+
+    {#1 \vspace{-2pt}}
+
+  }
+
+}
+
+\newcommand{\resumeSubheading}[4]{
+
+  \vspace{-2pt}\item
+
+    \begin{tabular*}{0.97\textwidth}[t]{l@{\extracolsep{\fill}}r}
+
+      \textbf{#1} & #2 \\
+
+      \textit{\small#3} & \textit{\small #4} \\
+
+    \end{tabular*}\vspace{-7pt}
+
+}
+
+\newcommand{\resumeSubSubheading}[2]{
+
+    \item
+
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+
+      \textit{\small#1} & \textit{\small #2} \\
+
+    \end{tabular*}\vspace{-7pt}
+
+}
+
+\newcommand{\resumeProjectHeading}[2]{
+
+    \item
+
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+
+      \small#1 & #2 \\
+
+    \end{tabular*}\vspace{-7pt}
+
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.15in, label={}]}
+
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+
+%%%%%%  RESUME STARTS HERE  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{document}
+
+%----------HEADING----------
+
+\begin{center}
+
+    \textbf{\Huge \scshape Shahzeb Jadoon} \\ \vspace{1pt}
+
+    \small +92 3335238812 $|$ Lahore, Pakistan $|$ \href{mailto:shahzebjadoon0@gmail.com}{\underline{shahzebjadoon0@gmail.com}} $|$ 
+
+    \href{https://shahzeb-jadoon-portfolio.vercel.app/}{\underline{Portfolio}} $|$
+
+    \href{https://www.linkedin.com/in/shahzeb-jadoon-8bb2949b/}{\underline{LinkedIn}} $|$
+
+    \href{https://github.com/Jadoon9}{\underline{Github}}
+
+\end{center}
+
+%-----------SUMMARY-----------
+
+\section{Summary}
+
+  \resumeSubHeadingListStart     
+
+    \resumeItem{Senior Front-End Developer with 5+ years of experience in React.js, Next.js, and MERN stack architecture. Expert in Redux, React Query, GraphQL, and performance optimization, delivering 40\%+ performance improvements. Proven leader with experience mentoring teams and driving technical excellence in Agile environments.}
+
+  \resumeSubHeadingListEnd
+
+%-----------EXPERIENCE-----------
+
+\section{Experience}
+
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+
+      {Lead Front-End Developer}{July 2025 -- Present}
+
+      {Acrosoft}{Pakistan}
+
+      \resumeItemListStart
+
+        \resumeItem{Lead front-end development team of 5+ developers, architecting scalable React.js and Next.js applications with TypeScript, establishing design systems and component libraries that improved code reusability by 50\%+}
+
+        \resumeItem{Mentor junior developers through code reviews and technical training sessions, establishing development standards and best practices that reduced bug rates by 30\% and improved team productivity}
+
+        \resumeItem{Optimize application performance through advanced techniques including code splitting, lazy loading, and caching strategies, resulting in 40\%+ improvement in load times and enhanced user experience across all projects}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+
+      {Senior Front-End Developer}{October 2024 -- June 2025}
+
+      {StarsAI}{Dubai, UAE}
+
+      \resumeItemListStart
+
+        \resumeItem{Led end-to-end development and delivery of React.js, Node.js, and GraphQL projects across four distinct user panels, ensuring timely completion and high-quality standards while managing project timelines and coordinating with cross-functional teams}
+
+        \resumeItem{Engineered scalable state management solutions using Redux and React Query, implementing efficient data fetching and caching strategies that improved application performance by 40\%+ and reduced API calls by 35\%}
+
+        \resumeItem{Integrated AI-powered features and enhanced data visualization capabilities using D3.js and Chart.js, creating interactive dashboards and analytics tools that improved user engagement and provided actionable insights for business decisions}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+
+      {Senior Front-End Developer}{December 2022 -- October 2024}
+
+      {Samaritan Technologies}{Lahore, Pakistan}
+
+      \resumeItemListStart
+
+        \resumeItem{Designed and developed responsive, high-performance React.js applications with RESTful API integration, implementing modern UI patterns and ensuring cross-browser compatibility, resulting in improved user satisfaction scores}
+
+        \resumeItem{Implemented advanced performance optimization techniques including lazy loading, code splitting, and bundle optimization, reducing initial load times by 35\% and improving Core Web Vitals scores significantly}
+
+        \resumeItem{Built interactive mapping features and geospatial data visualization using Mapbox Geolocation APIs and Leaflet, enabling location-based services that enhanced user experience and supported business location tracking requirements}
+
+      \resumeItemListEnd
+
+    \resumeSubSubheading
+
+      {JMM Innovations, Riyadh, Saudi Arabia (Outsourced)}{April 2024 -- September 2024}
+
+      \resumeItemListStart
+
+        \resumeItem{Directed end-to-end development of React.js, Node.js, and GraphQL applications, managing project lifecycle from conception to deployment, ensuring on-time delivery and maintaining high code quality standards throughout the development process}
+
+        \resumeItem{Optimized application performance by 45\% through strategic implementation of lazy loading, advanced caching mechanisms, and optimized GraphQL queries, significantly improving user experience and reducing server load}
+
+        \resumeItem{Streamlined API integration workflows for RESTful APIs and GraphQL, establishing reusable patterns and error handling strategies that improved developer productivity and reduced integration time by 30\%}
+
+      \resumeItemListEnd
+
+    \resumeSubheading
+
+      {Front-End Developer}{December 2019 -- December 2022}
+
+      {NFinity Solutions}{Lahore, Pakistan}
+
+      \resumeItemListStart
+
+        \resumeItem{Developed reusable React.js components with TypeScript and Next.js server-side rendering (SSR), establishing component libraries and design systems that improved SEO by 60\% and ensured consistent UI across multiple applications}
+
+        \resumeItem{Implemented real-time communication features using WebSocket APIs, enabling live chat functionality and real-time data updates that enhanced user engagement and supported collaborative features across the platform}
+
+        \resumeItem{Built responsive user interfaces using Bootstrap and Material-UI with mobile-first design principles, ensuring optimal user experience across desktop, tablet, and mobile devices while maintaining accessibility standards}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------EDUCATION-----------
+
+\section{Education}
+
+  \resumeSubHeadingListStart
+
+    \resumeSubheading
+
+      {Hazara University}{Mansehra, Pakistan}
+
+      {Bachelor of Science in Computer Science}{April 2013 -- September 2017}
+
+
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------
+
+\section{Projects}
+
+    \resumeSubHeadingListStart
+
+    \resumeProjectHeading
+
+      {\textbf{StarsAI} $|$ \emph{React.js, Node.js, Tailwind CSS, Material-UI, Bootstrap, MongoDB, AWS}}{October 2024 -- Present}
+
+      \resumeItemListStart
+
+        \resumeItem{Led front-end development for AI-powered educational platform with four user panels}
+
+        \resumeItem{Delivered bug fixes and new features, significantly boosting platform performance}
+
+        \resumeItem{\textbf{Link:} \url{https://stars-ai.com/}}
+
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+
+      {\textbf{The Tutor} $|$ \emph{React.js, TypeScript, ASP.NET, SQL Server, Stripe, Bitbucket}}{March 2023 -- January 2024}
+
+      \resumeItemListStart
+
+        \resumeItem{Spearheaded UI upgrades and integrated Stripe payment gateway for appointment booking system}
+
+        \resumeItem{Improved user engagement and conversion rates through streamlined interface}
+
+        \resumeItem{\textbf{Link:} \url{https://thetutor.me/}}
+
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+
+      {\textbf{Simple Study} $|$ \emph{React.js, TypeScript, Django, MySQL, Tailwind CSS, Bootstrap}}{December 2022 -- October 2024}
+
+      \resumeItemListStart
+
+        \resumeItem{Built comprehensive e-learning platform with course management and interactive video sessions}
+
+        \resumeItem{Enhanced user engagement with interactive study tools and scalable architecture}
+
+        \resumeItem{\textbf{Link:} \url{https://studycrowd.ai/}}
+
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+
+      {\textbf{EqlizeNow} $|$ \emph{React.js, Node.js, MongoDB, Tailwind CSS, React Query}}{January 2024 -- October 2024}
+
+      \resumeItemListStart
+
+        \resumeItem{Led development of rewards platform with chain joining mechanism using React.js and Node.js}
+
+        \resumeItem{Improved user retention through innovative reward system and efficient state management}
+
+        \resumeItem{\textbf{Link:} \url{https://www.eqlizenow.com/}}
+
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+
+      {\textbf{Jump Resume Builder} $|$ \emph{Next.js 15, TypeScript, Tailwind CSS, Material-UI}}{2024}
+
+      \resumeItemListStart
+
+        \resumeItem{Built ATS-friendly resume builder with 100+ templates, AI-powered suggestions, and PDF generation}
+
+        \resumeItem{Implemented multi-profile management and real-time editing capabilities}
+
+        \resumeItem{\textbf{Link:} \url{https://www.jumpresumebuilder.com/}}
+
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+
+      {\textbf{Jump Recruiter Employer} $|$ \emph{Next.js 15, TypeScript, Tailwind CSS, Material-UI}}{2024}
+
+      \resumeItemListStart
+
+        \resumeItem{Built comprehensive employer portal with job posting, candidate search, and analytics dashboard}
+
+        \resumeItem{Reduced time-to-hire by 40\%+ through streamlined candidate management and tracking}
+
+        \resumeItem{\textbf{Link:} \url{https://jumprecruiter.com/}}
+
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+
+      {\textbf{Jump Recruiter Seeker} $|$ \emph{Next.js 15, TypeScript, Tailwind CSS, Material-UI}}{2024}
+
+      \resumeItemListStart
+
+        \resumeItem{Developed job seeker portal with advanced search, personalized recommendations, and application tracking}
+
+        \resumeItem{Improved job search efficiency and user engagement by 50\%+}
+
+        \resumeItem{\textbf{Link:} \url{https://qa.jumprecruiter.com/}}
+
+      \resumeItemListEnd
+
+    \resumeProjectHeading
+
+      {\textbf{Acrosoft.io} $|$ \emph{React.js, Next.js, TypeScript, Tailwind CSS, MERN Stack}}{2024 -- Present}
+
+      \resumeItemListStart
+
+        \resumeItem{Developed company portfolio website showcasing products and services using modern MERN stack architecture}
+
+        \resumeItem{Implemented responsive design with interactive UI components and optimized performance for enterprise-grade solutions}
+
+        \resumeItem{\textbf{Link:} \url{https://acrosoft.io/}}
+
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
+
+%-----------TECHNICAL SKILLS-----------
+
+\section{Technical Skills}
+
+ \begin{itemize}[leftmargin=0.15in, label={}]
+
+    \small{\item{
+
+     \textbf{Front-End Development:} React.js, Next.js, JavaScript (ES6+), TypeScript, HTML5, CSS3, SCSS/SASS, JSX, DOM Manipulation, Event Handling, Component Lifecycle
+
+     \textbf{MERN Stack Architecture:} MongoDB, Express.js, React.js, Node.js, RESTful API Design, Full-Stack Integration, Mongoose ODM
+
+     \textbf{State Management \& Data Fetching:} Redux, Redux Toolkit, React Query, Context API, Zustand, SWR, Axios, Fetch API
+
+     \textbf{UI Frameworks \& Libraries:} Material-UI, Tailwind CSS, Bootstrap, Shadcn, Ant Design, Chakra UI, Styled Components, CSS Modules
+
+     \textbf{Form Handling \& Validation:} Formik, React Hook Form, Yup, Zod, React Final Form
+
+     \textbf{Backend Technologies:} Node.js, Express.js, MongoDB, Mongoose, SQL Server, MySQL, PostgreSQL, ASP.NET, REST APIs, GraphQL
+
+     \textbf{Data Structures \& Algorithms:} Arrays, Linked Lists, Stacks, Queues, Trees, Graphs, Hash Tables, Big O Notation, Time \& Space Complexity Analysis, Sorting Algorithms, Search Algorithms
+
+     \textbf{Version Control \& Collaboration:} Git, GitHub, Bitbucket, GitLab, Git Flow, Branching Strategies
+
+     \textbf{Performance Optimization:} Code Splitting, Lazy Loading, Memoization, Bundle Optimization, Caching Strategies, Virtual DOM, React.memo, useMemo, useCallback
+
+     \textbf{Data Visualization:} D3.js, Chart.js, Recharts, Victory, ApexCharts
+
+     \textbf{3D Visualization \& Graphics:} Three.js, Babylon.js
+
+     \textbf{Mapping \& Geolocation:} Mapbox Geolocation APIs, Leaflet
+
+     \textbf{API Integration:} RESTful APIs, GraphQL, WebSocket APIs, REST Architecture, HTTP Methods, Authentication (JWT, OAuth)
+
+     \textbf{Medical Imaging:} DICOM Integration
+
+     \textbf{Deployment \& Cloud:} AWS, Vercel, Firebase, Netlify, Docker, CI/CD Pipelines
+
+     \textbf{Methodologies:} Agile, Scrum, Kanban, Test-Driven Development (TDD)
+
+    }}
+
+ \end{itemize}
+
+%-----------KEY ACHIEVEMENTS-----------
+
+\section{Key Achievements}
+
+  \resumeSubHeadingListStart
+
+    \resumeItem{Led development of 15+ production applications serving thousands of users}
+
+    \resumeItem{Improved application performance by 40\%+ through optimization techniques}
+
+    \resumeItem{Mentored 5+ junior developers, improving team productivity and code quality}
+
+    \resumeItem{Delivered projects with 100\% on-time completion rate}
+
+  \resumeSubHeadingListEnd
+
+\end{document}
+
